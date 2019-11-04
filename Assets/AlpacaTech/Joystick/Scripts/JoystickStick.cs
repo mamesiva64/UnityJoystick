@@ -149,13 +149,6 @@ namespace AlpacaTech
                     return;
                 }
 #endif
-                foreach (var touch in Input.touches)
-                {
-                    if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-                    {
-                        return;
-                    }
-                }
             }
 
 #if (UNITY_IOS || UNITY_ANDROID)
@@ -165,7 +158,10 @@ namespace AlpacaTech
                 switch (touch.phase)
                 {
                     case TouchPhase.Began:
-                        OnTouchDown(touch.fingerId);
+                        if (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                        {
+                            OnTouchDown(touch.fingerId);
+                        }
                         break;
                     case TouchPhase.Stationary:
                     case TouchPhase.Moved:

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AlpacaTech/Joystick/JoystickSample.unity
+    path: Assets/AlpacaTech/Joystick/Sample/JoystickSample.unity
     guid: 54637eae20f8b8f4cb71a5f1d286d691
   m_configObjects: {}
